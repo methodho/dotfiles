@@ -1,0 +1,8 @@
+windows:
+  - name: three-panes
+    root: ~
+    layout: main-vertical
+    panes:
+      - gtop
+      - cd GitHub
+      - focus: true
