@@ -168,5 +168,11 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
 
-### Added by IBM Cloud CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
