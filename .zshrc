@@ -21,12 +21,13 @@ antigen bundle brew
 antigen bundle sublime
 antigen bundle go
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle qianxinfeng/zsh-vscode
-
 antigen bundle paulirish/git-open
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
