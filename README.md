@@ -7,7 +7,10 @@ A collection of dotfiles for my MacBook.
 # zsh
 
 ```sh
-$ brew install zsh
+# install zsh & zsh plugin manager
+$ brew install zsh && chsh -s /bin/zsh
+$ brew install antigen
 
-% ln /path/to/dotfiles/.zshrc ~/.zshrc
+# symlink
+$ ln /path/to/dotfiles/.zshrc ~/.zshrc
 ```
