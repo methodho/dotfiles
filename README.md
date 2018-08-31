@@ -3,6 +3,9 @@
 
 A collection of dotfiles for my MacBook.
 
+## homebrew
+
+[https://brew.sh/index_zh-tw](https://brew.sh/index_zh-tw)
 
 ## zsh
 
