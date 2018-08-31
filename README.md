@@ -2,6 +2,8 @@
 
 A collection of dotfiles for my MacBook.
 
+> `$ make link` to re-link all *.rc files to `$HOME`
+
 ## homebrew
 
 [https://brew.sh/index_zh-tw](https://brew.sh/index_zh-tw)
