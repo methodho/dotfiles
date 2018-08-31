@@ -177,3 +177,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
