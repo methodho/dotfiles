@@ -28,7 +28,7 @@ $ ln /path/to/dotfiles/.zshrc ~/.zshrc
 
 - python: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
 
-  ```
+  ```sh
   # https://github.com/pyenv/pyenv-installer
   $ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
@@ -38,6 +38,6 @@ $ ln /path/to/dotfiles/.zshrc ~/.zshrc
 
 - nodejs: [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
 
-  ```
+  ```sh
   $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   ```
