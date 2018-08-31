@@ -9,6 +9,8 @@ A collection of dotfiles for my MacBook.
 
 ## zsh
 
+[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen)
+
 ```sh
 # install zsh & plugin manager
 $ brew install zsh && chsh -s /bin/zsh
@@ -47,11 +49,11 @@ $ brew cask install iterm2
 
 ## vim
 
-- vim-plug: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
+vim-plug: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
-  ```sh
-  $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimi
+```sh
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimi
 
-  $ ln /path/to/dotfiles/.vimrc ~/.vimrc
-  ```
+$ ln /path/to/dotfiles/.vimrc ~/.vimrc
+```
