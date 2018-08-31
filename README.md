@@ -44,3 +44,14 @@ $ brew cask install iterm2
   ```sh
   $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   ```
+
+## vim
+
+- vim-plug: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
+
+  ```sh
+  $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimi
+
+  $ ln /path/to/dotfiles/.vimrc ~/.vimrc
+  ```

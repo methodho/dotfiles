@@ -1,7 +1,0 @@
-windows:
-  - name: three-panes
-    root: ~
-    layout: even-horizontal
-    panes:
-      - cd GitHub
-      - focus: true

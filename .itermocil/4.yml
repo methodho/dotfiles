@@ -1,9 +1,0 @@
-windows:
-  - name: three-panes
-    root: ~
-    layout: tiled
-    panes:
-      - vtop
-      - cd GitHub
-      - cd ~
-      - focus: true
