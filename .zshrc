@@ -182,5 +182,6 @@ eval "$(jenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# https://github.com/rupa/z
 source /Users/matt/GitHub/z/z.sh
 . /Users/matt/GitHub/z/z.sh
