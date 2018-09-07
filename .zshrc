@@ -185,3 +185,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # https://github.com/rupa/z
 source /Users/matt/GitHub/z/z.sh
 . /Users/matt/GitHub/z/z.sh
+
+# https://github.com/github/hub
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+eval "$(hub alias -s)"
