@@ -169,10 +169,12 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
 
+# https://github.com/creationix/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# https://github.com/pyenv/pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -190,3 +192,9 @@ source /Users/matt/GitHub/z/z.sh
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 eval "$(hub alias -s)"
+
+# https://github.com/neovim/neovim
+# use .vimrc for neovim: https://blog.m157q.tw/posts/2018/07/23/use-my-old-vimrc-for-neovim/
+alias vi="nvim"
+alias vim="nvim"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
