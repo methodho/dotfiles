@@ -186,7 +186,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # https://github.com/rupa/z
 . /Users/matt/GitHub/z/z.sh
-ln -s /Users/matt/GitHub/z/z.1 /usr/local/share/man/man1
+[ ! -f /usr/local/share/man/man1/z.1 ] && ln -s /Users/matt/GitHub/z/z.1 /usr/local/share/man/man1
 
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
