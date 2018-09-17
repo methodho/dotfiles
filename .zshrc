@@ -185,8 +185,8 @@ eval "$(jenv init -)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # https://github.com/rupa/z
-source /Users/matt/GitHub/z/z.sh
 . /Users/matt/GitHub/z/z.sh
+ln -s /Users/matt/GitHub/z/z.1 /usr/local/share/man/man1
 
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
@@ -198,3 +198,6 @@ eval "$(hub alias -s)"
 alias vi="nvim"
 alias vim="nvim"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+# https://github.com/github-changelog-generator/github-changelog-generator
+export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
