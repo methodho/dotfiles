@@ -182,7 +182,7 @@ eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # https://github.com/rupa/z
 . /Users/matt/GitHub/z/z.sh
@@ -201,3 +201,6 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # https://github.com/github-changelog-generator/github-changelog-generator
 export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
+
+# https://github.com/tmux-plugins/tpm
+tmux source ~/.tmux.conf

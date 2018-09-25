@@ -58,3 +58,11 @@ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 $ ln /path/to/dotfiles/.vimrc ~/.vimrc
 ```
+
+## tmux
+
+tmux-plugins: [https://github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
+
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
