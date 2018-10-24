@@ -3,6 +3,7 @@ link:
 	# zsh
 	ln -f .zshrc ~/.zshrc
 	# fish
+	mkdir -p ~/.config/fish/functions
 	ln -sf ~/.jenv/fish/export.fish ~/.config/fish/functions/export.fish
 	ln -sf ~/.jenv/fish/jenv.fish ~/.config/fish/functions/jenv.fish
 	ln -f init.fish /Users/matt/.config/omf/init.fish
