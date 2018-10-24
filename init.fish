@@ -18,5 +18,6 @@ set PATH /usr/local/opt/gettext/bin $PATH
 # https://github.com/gcuisinier/jenv
 set PATH $HOME/.jenv/bin $PATH
 
+# https://github.com/oh-my-fish/theme-default/blob/master/fish_prompt.fish
 # default theme 的 success color, 不明原因有底色, 重設一次就好了
 set fish_pager_color_progress cyan
