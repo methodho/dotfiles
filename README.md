@@ -70,3 +70,13 @@ tmux-plugins: [https://github.com/tmux-plugins/tpm](https://github.com/tmux-plug
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+## fish
+
+```
+# install fish
+brew install fish
+
+# install oh-my-fish
+curl -L https://get.oh-my.fish | fish
+```
