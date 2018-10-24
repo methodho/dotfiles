@@ -73,7 +73,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## fish
 
-```
+- https://github.com/oh-my-fish/oh-my-fish
+
+```sh
 # install fish
 brew install fish
 
