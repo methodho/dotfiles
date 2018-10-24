@@ -6,3 +6,4 @@ package nvm
 package pyenv
 package z
 theme default
+package cd
