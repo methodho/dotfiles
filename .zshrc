@@ -4,22 +4,22 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle osx
-antigen bundle svn
-antigen bundle atom
-antigen bundle gradle
-antigen bundle npm
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle kubectl
-antigen bundle brew
-antigen bundle sublime
-antigen bundle go
+#antigen bundle git
+#antigen bundle heroku
+#antigen bundle pip
+#antigen bundle lein
+#antigen bundle command-not-found
+#antigen bundle osx
+#antigen bundle svn
+#antigen bundle atom
+#antigen bundle gradle
+#antigen bundle npm
+#antigen bundle docker
+#antigen bundle docker-compose
+#antigen bundle kubectl
+#antigen bundle brew
+#antigen bundle sublime
+#antigen bundle go
 
 antigen bundle qianxinfeng/zsh-vscode
 antigen bundle paulirish/git-open
@@ -174,13 +174,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# https://github.com/pyenv/pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# https://github.com/gcuisinier/jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# https://github.com/pyenv/pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# https://github.com/pyenv/pyenv/issues/1219
+
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -203,4 +207,4 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 
 # https://github.com/tmux-plugins/tpm
-tmux source ~/.tmux.conf
+# tmux source ~/.tmux.conf

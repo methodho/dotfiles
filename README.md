@@ -34,6 +34,8 @@ $ brew cask install iterm2
 
 - python: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
 
+> https://github.com/pyenv/pyenv-installer
+
   ```sh
   # https://github.com/pyenv/pyenv-installer
   $ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
@@ -41,6 +43,8 @@ $ brew cask install iterm2
   # https://github.com/pyenv/pyenv-virtualenv
   $ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
   ```
+
+> https://github.com/pyenv/pyenv/issues/1219
 
 - nodejs: [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
 

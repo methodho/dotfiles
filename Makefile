@@ -5,4 +5,4 @@ link:
 	# https://blog.m157q.tw/posts/2018/07/23/use-my-old-vimrc-for-neovim/
 	mkdir -p ~/.config/nvim
 	ln -sf ~/.vimrc ~/.config/nvim/init.vim
-	ln -f .tmux.conf ~/.tmux.conf
+	# ln -f .tmux.conf ~/.tmux.conf
