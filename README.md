@@ -79,12 +79,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # install fish
 brew install fish
 
-# install oh-my-fish
-curl -L https://get.oh-my.fish | fish
-
 # link bundle
 make
 
-# install plugins
-omf install
+# install oh-my-fish
+curl -L https://get.oh-my.fish | fish
+
+# default theme 的 success color, 不明原因有底色, 重設一次就好了
+set $fish_pager_color_progress cyan
 ```
