@@ -18,6 +18,9 @@ set PATH /usr/local/opt/gettext/bin $PATH
 # https://github.com/gcuisinier/jenv
 set PATH $HOME/.jenv/bin $PATH
 
+# https://github.com/nvbn/thefuck/wiki/Shell-aliases
+thefuck --alias | source 
+
 # https://github.com/oh-my-fish/theme-default/blob/master/fish_prompt.fish
 # https://fishshell.com/docs/current/index.html#variables-color
 set fish_pager_color_progress cyan
