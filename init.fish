@@ -19,4 +19,4 @@ set PATH /usr/local/opt/gettext/bin $PATH
 set PATH $HOME/.jenv/bin $PATH
 
 # default theme 的 success color, 不明原因有底色, 重設一次就好了
-set $fish_pager_color_progress cyan
+set fish_pager_color_progress cyan
