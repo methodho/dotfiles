@@ -9,7 +9,6 @@ link:
 	# fisher
 	cp fishfile ~/.config/fish/fishfile
 	ln -f init.fish ~/.config/fish/conf.d/init.fish
-	ln -sf ~/GitHub/dotfiles/fish-functions/* ~/.config/fish/functions/
 	# oh-my-fish
 	#ln -f init.fish /Users/matt/.config/omf/init.fish
 	#ln -f bundle /Users/matt/.config/omf/bundle

@@ -73,18 +73,18 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## fish
 
-- Oh My Fish - [https://github.com/oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
+- Fisher - [https://github.com/jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 
 ```sh
 # install fish
 brew install fish
 
-# install oh-my-fish
-curl -L https://get.oh-my.fish | fish
+# install plugin manager
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
-# link bundle
+# link bundles
 make
 
 # install plugins
-omf install
+fisher
 ```

@@ -21,8 +21,5 @@ set PATH $HOME/.jenv/bin $PATH
 # https://github.com/nvbn/thefuck/wiki/Shell-aliases
 thefuck --alias | source 
 
-# https://github.com/oh-my-fish/theme-default/blob/master/fish_prompt.fish
-# https://fishshell.com/docs/current/index.html#variables-color
-set -g fish_pager_color_progress cyan
-set -g fish_color_command green
-set -g theme_short_path yes
+# https://github.com/rafaelrinaldi/pure
+set pure_symbol_prompt "⋊>"
