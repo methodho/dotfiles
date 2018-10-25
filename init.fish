@@ -22,4 +22,4 @@ set PATH $HOME/.jenv/bin $PATH
 thefuck --alias | source 
 
 # https://github.com/rafaelrinaldi/pure
-#set pure_symbol_prompt "⋊>"
+# set pure_symbol_prompt "⋊>"
