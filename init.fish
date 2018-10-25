@@ -22,7 +22,7 @@ set PATH $HOME/.jenv/bin $PATH
 thefuck --alias | source 
 
 # https://github.com/matchai/spacefish
-# set SPACEFISH_PROMPT_SEPARATE_LINE false
+set SPACEFISH_PROMPT_SEPARATE_LINE false
 set SPACEFISH_TIME_SHOW true
 set SPACEFISH_DIR_PREFIX ""
 set SPACEFISH_PACKAGE_SHOW false
