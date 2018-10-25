@@ -7,3 +7,4 @@ package pyenv
 package z
 theme default
 package cd
+package fzf
