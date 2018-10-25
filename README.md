@@ -87,4 +87,7 @@ make
 
 # install plugins
 fisher
+
+# override some theme setting
+make
 ```
