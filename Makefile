@@ -9,7 +9,7 @@ link:
 	# fisher
 	cp fishfile ~/.config/fish/fishfile
 	ln -f init.fish ~/.config/fish/conf.d/init.fish
-	cp fish_right_prompt.fish ~/.config/fish/functions/fish_right_prompt.fish
+	#cp fish_right_prompt.fish ~/.config/fish/functions/fish_right_prompt.fish
 	# oh-my-fish
 	#ln -f init.fish /Users/matt/.config/omf/init.fish
 	#ln -f bundle /Users/matt/.config/omf/bundle

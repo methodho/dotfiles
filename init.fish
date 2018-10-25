@@ -21,5 +21,20 @@ set PATH $HOME/.jenv/bin $PATH
 # https://github.com/nvbn/thefuck/wiki/Shell-aliases
 thefuck --alias | source 
 
-# https://github.com/rafaelrinaldi/pure
-# set pure_symbol_prompt "⋊>"
+# https://github.com/matchai/spacefish
+set SPACEFISH_PROMPT_SEPARATE_LINE false
+set SPACEFISH_TIME_SHOW true
+set SPACEFISH_DIR_PREFIX ""
+set SPACEFISH_PACKAGE_SHOW false
+set SPACEFISH_NODE_SHOW false
+set SPACEFISH_DOCKER_SHOW false
+set SPACEFISH_RUBY_SHOW false
+set SPACEFISH_HASKELL_SHOW false
+set SPACEFISH_CONDA_SHOW false
+set SPACESHIP_AWS_SHOW false
+set SPACEFISH_PYENV_SHOW false
+set SPACEFISH_GOLANG_SHOW false
+set SPACEFISH_PHP_SHOW false
+set SPACEFISH_RUST_SHOW false
+set SPACEFISH_KUBECONTEXT_SHOW false
+set SPACEFISH_EXEC_TIME_SHOW false
