@@ -10,18 +10,18 @@ A collection of dotfiles for my MacBook.
 
 ## zsh
 
-[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen)
+[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody)
 
 ```sh
 # install zsh & plugin manager
 $ brew install zsh && chsh -s /bin/zsh
-$ brew install antigen
-
-# symlink .zshrc to home directory
-$ ln /path/to/dotfiles/.zshrc ~/.zshrc
+$ brew install getantibody/tap/antibody
 
 # install iTerm2
 $ brew cask install iterm2
+
+# config zsh plugin
+$ make zsh
 ```
 
 ## package manager
@@ -60,42 +60,6 @@ vim-plug: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimi
 
-$ ln /path/to/dotfiles/.vimrc ~/.vimrc
-```
-
-## tmux
-
-tmux-plugins: [https://github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
-
-```sh
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-## fish
-
-- Fisher - [https://github.com/jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
-
-```sh
-# install fish
-brew install fish
-
-# install plugin manager
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-
-# link bundles
-make
-
-# install plugins
-fisher
-
-# override some theme setting
-make
-```
-
-set fish as deefault shell:
-
-```sh
-echo "/usr/local/bin/fish" >> /etc/shells
-
-chsh -s /usr/local/bin/fish 
+# config
+$ make vim
 ```
