@@ -1,6 +1,5 @@
 mafredri/zsh-async
 rupa/z
-djui/alias-tips
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
