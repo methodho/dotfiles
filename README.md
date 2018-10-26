@@ -28,6 +28,10 @@ $ make zsh
 
   ```sh
   $ brew install jenv
+  
+  # enable plugins
+  $ jenv plugins
+  $ jenv enable-plugin maven
   ```
 
 - python: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
