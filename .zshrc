@@ -3,10 +3,11 @@ source ~/.zsh_plugins.sh
 
 # general
 export TERM=xterm-256color
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
+alias -g ..="cd .."
+alias -g ...='cd ../..'
+alias -g ....='cd ../../..'
+alias -g .....='cd ../../../..'
+alias -g ......='cd ../../../../..'
 alias lsa='ls -lahG'
 alias l='ls -lahG'
 alias ll='ls -lhG'
