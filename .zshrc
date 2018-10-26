@@ -3,18 +3,20 @@ source ~/.zsh_plugins.sh
 
 # general
 export TERM=xterm-256color
-alias -g ..="cd .."
-alias -g ...='cd ../..'
-alias -g ....='cd ../../..'
-alias -g .....='cd ../../../..'
-alias -g ......='cd ../../../../..'
+alias ..="cd .."
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias lsa='ls -lahG'
 alias l='ls -lahG'
 alias ll='ls -lhG'
 alias la='ls -lAhG'
 
 # https://github.com/sindresorhus/pure
-export PROMPT='%F{yello}%* '$PROMPT
+export prompt_newline='%666v'
+export PROMPT=" $PROMPT"
+export RPROMPT='%F{white}%*'
 
 export SPACESHIP_EXEC_TIME_SHOW=false
 
