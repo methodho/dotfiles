@@ -1,8 +1,10 @@
+# https://github.com/lukechilds/zsh-nvm
+export NVM_LAZY_LOAD=true
+
 # https://github.com/getantibody/antibody
 source ~/.zsh_plugins.sh
 
 # general
-export TERM=xterm-256color
 alias ..="cd .."
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -36,18 +38,18 @@ export PATH=$PATH:$GOPATH/bin
 export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
 
 # https://github.com/creationix/nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # https://github.com/gcuisinier/jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # https://github.com/pyenv/pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 # https://github.com/pyenv/pyenv/issues/1219
 
 # https://github.com/github/hub

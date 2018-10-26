@@ -2,11 +2,16 @@ mafredri/zsh-async
 rupa/z
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+chrissicool/zsh-256color
+djui/alias-tips
+yous/vanilli.sh
 
-# theme
-#denysdovhan/spaceship-prompt
-sindresorhus/pure
+# lazy load package managers
+lukechilds/zsh-nvm
+davidparsson/zsh-pyenv-lazy
 
 # these should be at last!
-zsh-users/zsh-syntax-highlighting
+sindresorhus/pure
+#zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
