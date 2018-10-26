@@ -2,6 +2,7 @@
 source ~/.zsh_plugins.sh
 
 # general
+export TERM=xterm-256color
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -11,11 +12,8 @@ alias l='ls -lahG'
 alias ll='ls -lhG'
 alias la='ls -lAhG'
 
-# https://github.com/zsh-users/zsh-autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=7
-
 # https://github.com/sindresorhus/pure
-export PROMPT='%F{white}%* '$PROMPT
+export PROMPT='%F{yello}%* '$PROMPT
 
 export SPACESHIP_EXEC_TIME_SHOW=false
 
