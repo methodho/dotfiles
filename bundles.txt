@@ -1,0 +1,13 @@
+mafredri/zsh-async
+rupa/z
+djui/alias-tips
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+# theme
+#denysdovhan/spaceship-prompt
+sindresorhus/pure
+
+# these should be at last!
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
