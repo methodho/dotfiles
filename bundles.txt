@@ -3,12 +3,12 @@ rupa/z
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 chrissicool/zsh-256color
-djui/alias-tips
 yous/vanilli.sh
 
 # lazy load package managers
 lukechilds/zsh-nvm
 davidparsson/zsh-pyenv-lazy
+shihyuho/zsh-jenv-lazy
 
 # these should be at last!
 sindresorhus/pure

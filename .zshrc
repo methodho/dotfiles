@@ -43,8 +43,8 @@ export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # https://github.com/gcuisinier/jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+#export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
 
 # https://github.com/pyenv/pyenv
 #export PATH="$HOME/.pyenv/bin:$PATH"
