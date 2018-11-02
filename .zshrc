@@ -1,4 +1,4 @@
-export $DOTFILES=~/.dotfiles
+export DOTFILES=~/.dotfiles
 
 # https://github.com/lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true
@@ -58,6 +58,3 @@ export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 
 # https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-# nnn
-source $GITHUB/dotfiles/_nnn.sh
