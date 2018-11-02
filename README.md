@@ -3,7 +3,7 @@
 A collection of dotfiles for my MacBook.
 
 ```sh
-$ git clone https://github.com/shihyuho/dotfiles.git ~/.dotfiles
+$ git clone git@github.com:shihyuho/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ make
 ```
