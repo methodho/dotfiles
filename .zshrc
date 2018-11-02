@@ -1,3 +1,5 @@
+export $DOTFILES=~/.dotfiles
+
 # https://github.com/lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true
 
@@ -37,21 +39,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
 
-# https://github.com/creationix/nvm
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# https://github.com/gcuisinier/jenv
-#export PATH="$HOME/.jenv/bin:$PATH"
-#eval "$(jenv init -)"
-
-# https://github.com/pyenv/pyenv
-#export PATH="$HOME/.pyenv/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-# https://github.com/pyenv/pyenv/issues/1219
-
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
@@ -65,3 +52,12 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # https://github.com/github-changelog-generator/github-changelog-generator
 export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
+
+# added by travis gem
+[ -f /Users/matt/.travis/travis.sh ] && source /Users/matt/.travis/travis.sh
+
+# https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+# nnn
+source $GITHUB/dotfiles/_nnn.sh

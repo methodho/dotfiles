@@ -2,6 +2,12 @@
 
 A collection of dotfiles for my MacBook.
 
+```sh
+$ git clone https://github.com/shihyuho/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ make
+```
+
 ## homebrew
 
 [https://brew.sh/index_zh-tw](https://brew.sh/index_zh-tw)
