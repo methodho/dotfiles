@@ -11,6 +11,7 @@ zsh:
 	ln -f zsh/.zshrc ~/.zshrc
 	antibody bundle < zsh/bundles.txt > ~/.zsh_plugins.sh
 	antibody update
+	ln -f zsh/.warprc ~/.warprc
 
 .PHONY: vim
 vim:
