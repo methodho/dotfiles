@@ -18,11 +18,9 @@ alias ll='ls -lhG'
 alias la='ls -lAhG'
 
 # https://github.com/sindresorhus/pure
-export prompt_newline='%666v'
-export PROMPT=" $PROMPT"
-export RPROMPT='%F{white}%*'
-
-export SPACESHIP_EXEC_TIME_SHOW=false
+#export prompt_newline='%666v'
+export PROMPT="%F{yello}%* $PROMPT"
+#export RPROMPT='%F{white}%*'
 
 export PATH="/usr/local/sbin:$PATH"
 
