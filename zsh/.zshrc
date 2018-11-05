@@ -56,8 +56,3 @@ export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 
 # https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-# https://github.com/mfaerevaag/wd
-wd() {
-  . /Users/matt/bin/wd/wd.sh
-}
