@@ -1,0 +1,5 @@
+[user]
+	email = methodho@gmail.com
+	name = matt
+[include]
+	path = ~/.dotfiles/git/gitalias.txt
