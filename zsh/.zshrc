@@ -47,6 +47,7 @@ eval "$(hub alias -s)"
 alias vi="nvim"
 alias vim="nvim"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+export VIMRUNTIME="$(nvim -e --cmd 'echo $VIMRUNTIME|quit' 2>&1)"
 
 # https://github.com/github-changelog-generator/github-changelog-generator
 export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
@@ -63,3 +64,5 @@ source $DOTFILES/nnn/quitcd.zsh
 export NNN_NO_AUTOSELECT=1
 export NNN_COPIER="$DOTFILES/nnn/copier.sh"
 export NNN_BMS='doc:~/Documents/SoftLeader;D:~/Downloads/;tmp:~/tmp;d:~/Desktop;g:~/GitHub;go:~/go/src/github.com'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -71,3 +71,11 @@ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # config
 $ make vim
 ```
+
+## nnn
+
+- 依賴
+
+```sh
+$ brew install moreutils
+```
