@@ -2,8 +2,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/vim-easy-align'
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -26,6 +24,17 @@ Plug 'jacoborus/tender.vim'
 call plug#end()
 
 set laststatus=2
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme tender
+
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
+
