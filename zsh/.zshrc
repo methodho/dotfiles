@@ -27,15 +27,11 @@ export PATH="/usr/local/sbin:$PATH"
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
-# drone
-export DRONE_SERVER=http://softleader.com.tw:18082
-export DRONE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0Ijoic2hpaHl1aG8iLCJ0eXBlIjoidXNlciJ9.W7tnX9ZiHcrtQdwKGJ9mJgJ4Rg6SV085y1uRqTAnWP8
-
 # GO
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export GITHUB_TOKEN=9f85fc3a6e07814219ff5b1ed5653d1f03432100
+export GITHUB_TOKEN=071d81562713783bc77cc6689715cde8475ec223
 
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
@@ -63,6 +59,6 @@ source $DOTFILES/nnn/_nnn
 source $DOTFILES/nnn/quitcd.zsh
 export NNN_NO_AUTOSELECT=1
 export NNN_COPIER="$DOTFILES/nnn/copier.sh"
-export NNN_BMS='doc:~/Documents/SoftLeader;D:~/Downloads/;tmp:~/tmp;d:~/Desktop;g:~/GitHub;go:~/go/src/github.com'
+export NNN_BMS='d:~/Documents/SoftLeader;D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.com'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
