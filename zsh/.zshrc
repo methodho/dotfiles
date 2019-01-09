@@ -62,3 +62,6 @@ export NNN_COPIER="$DOTFILES/nnn/copier.sh"
 export NNN_BMS='d:~/Documents/SoftLeader;D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.com'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# https://flutter.io/
+export PATH=$PATH:/Users/matt/development/flutter/bin
