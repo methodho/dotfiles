@@ -55,11 +55,11 @@ export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 # https://github.com/jarun/nnn
-source $DOTFILES/nnn/_nnn
 source $DOTFILES/nnn/quitcd.zsh
 export NNN_NO_AUTOSELECT=1
 export NNN_COPIER="$DOTFILES/nnn/copier.sh"
 export NNN_BMS='D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.com'
+export DISABLE_FILE_OPEN_ON_NAV=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
