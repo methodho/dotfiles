@@ -2,6 +2,9 @@
 
 call plug#begin('~/.vim/plugged')
 
+" https://github.com/tpope/vim-sensible
+Plug 'tpope/vim-sensible'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -18,10 +21,15 @@ Plug 'jacoborus/tender.vim'
 " Vim HardTime
 Plug 'takac/vim-hardtime'
 
+" https://github.com/plasticboy/vim-markdown#installation
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
-
-set laststatus=2
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
