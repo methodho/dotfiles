@@ -21,12 +21,11 @@ Plug 'jacoborus/tender.vim'
 " Vim HardTime
 Plug 'takac/vim-hardtime'
 
-" https://github.com/plasticboy/vim-markdown#installation
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
 " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-surround'
+
+" https://github.com/rlue/vim-barbaric
+Plug 'rlue/vim-barbaric'
 
 " Initialize plugin system
 call plug#end()
