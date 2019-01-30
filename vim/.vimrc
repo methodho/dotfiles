@@ -2,14 +2,9 @@
 
 call plug#begin('~/.vim/plugged')
 
-" https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'scrooloose/nerdtree'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -18,14 +13,15 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'jacoborus/tender.vim'
 
-" Vim HardTime
 Plug 'takac/vim-hardtime'
 
-" https://github.com/tpope/vim-surround
 Plug 'tpope/vim-surround'
 
-" https://github.com/rlue/vim-barbaric
 Plug 'rlue/vim-barbaric'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'easymotion/vim-easymotion'
 
 " Initialize plugin system
 call plug#end()
@@ -50,3 +46,16 @@ let g:list_of_normal_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
+
+" ctrlpvim/ctrlp.vim
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" https://github.com/scrooloose/nerdtree
+" open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" open NERDTree automatically when vim starts up on opening a directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
