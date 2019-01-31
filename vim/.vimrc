@@ -6,7 +6,6 @@ Plug 'tpope/vim-sensible'
 
 Plug 'scrooloose/nerdtree'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'itchyny/lightline.vim'
