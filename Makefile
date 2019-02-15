@@ -5,7 +5,6 @@ HAS_ZSH := $(shell command -v zsh;)
 HAS_ANTIBODY := $(shell command -v antibody;)
 HAS_NEOVIM := $(shell command -v nvim;)
 HAS_XKBSWITCH := $(shell command -v xkbswitch;)
-HAS_FZF := $(shell command -v fzf;)
 
 .PHONY: all
 all: bootstrap zsh vim git
@@ -40,9 +39,6 @@ ifndef HAS_XKBSWITCH
 	git clone https://github.com/myshov/xkbswitch-macosx
 	cp xkbswitch-macosx/bin/xkbswitch /usr/local/bin
 	rm -rf xkbswitch-macosx
-endif
-ifndef HAS_FZF
-	brew install fzf
 endif
 	ln -f vim/.vimrc ~/.vimrc
 	# https://blog.m157q.tw/posts/2018/07/23/use-my-old-vimrc-for-neovim/

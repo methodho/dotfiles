@@ -1,11 +1,11 @@
 " https://github.com/junegunn/vim-plug
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'itchyny/lightline.vim'
@@ -18,9 +18,9 @@ Plug 'tpope/vim-surround'
 
 Plug 'rlue/vim-barbaric'
 
-Plug 'ctrlpvim/ctrlp.vim'
-
 Plug 'easymotion/vim-easymotion'
+
+Plug 'junegunn/vim-xmark', { 'do': 'make' }
 
 " Initialize plugin system
 call plug#end()
@@ -58,3 +58,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+set number
