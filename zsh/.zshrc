@@ -64,3 +64,5 @@ export DISABLE_FILE_OPEN_ON_NAV=1
 
 # https://flutter.io/
 export PATH=$PATH:/Users/matt/development/flutter/bin
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
