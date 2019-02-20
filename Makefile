@@ -26,6 +26,8 @@ endif
 ifndef HAS_ANTIBODY
 	brew install getantibody/tap/antibody
 endif
+	rm -rf ~/.kubectl_aliases
+	git clone https://github.com/ahmetb/kubectl-aliases.git ~/.kubectl_aliases
 	ln -f zsh/.zshrc ~/.zshrc
 	antibody bundle < zsh/bundles.txt > ~/.zsh_plugins.sh
 	antibody update
