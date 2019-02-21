@@ -10,8 +10,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'itchyny/lightline.vim'
 
-"Plug 'jacoborus/tender.vim'
-Plug 'cocopon/iceberg.vim'
+Plug 'cocopon/iceberg.vim' 
 
 Plug 'takac/vim-hardtime'
 
@@ -33,11 +32,10 @@ endif
 
 " Theme
 syntax enable
-"colorscheme tender
-colorscheme Iceberg
+colorscheme iceberg
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'iceberg',
       \ }
 
 " Vim HardTime
