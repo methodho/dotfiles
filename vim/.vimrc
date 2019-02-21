@@ -10,7 +10,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'cocopon/iceberg.vim' 
+"Plug 'cocopon/iceberg.vim'
+Plug 'hzchirs/vim-material'
+Plug 'drewtempelmeyer/palenight.vim'
 
 Plug 'takac/vim-hardtime'
 
@@ -32,10 +34,14 @@ endif
 
 " Theme
 syntax enable
-colorscheme iceberg
+let g:material_style='palenight'
+set background=dark
+colorscheme vim-material
+"colorscheme palenight
 
+" Airline
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
+      \ 'colorscheme': 'material',
       \ }
 
 " Vim HardTime
