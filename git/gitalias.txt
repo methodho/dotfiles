@@ -140,9 +140,15 @@
   # cherry-pick - apply the changes introduced by some existing commits; useful for moving small chunks of code between branches.
   cp = cherry-pick
 
+  # cherry-pick - abort the picking process
+  cpa = cherry-pick --abort
+
+  # cherry-pick - continue the picking process
+  cpc = cherry-pick --continue
+    
   # cherry-pick without making a commit, and when when recording the commit, append a line that says "(cherry picked from commit ...)"
   cp-nx = cherry-pick --no-commit -x
-
+    
   ### diff ###
 
   # diff - show changes not yet staged
@@ -243,12 +249,15 @@
   # rebase - forward-port local commits to the updated upstream head.
   rb = rebase
 
+  # rebase abort - cancel the rebasing process
+  rba = rebase --abort
+  
   # rebase - continue the rebasing process after resolving a conflict manually and updating the index with the resolution.
   rbc = rebase --continue
 
   # rebase - restart the rebasing process by skipping the current patch.
   rbs = rebase --skip
-
+    
   # rbi - rebase interactive on our unpushed commits.
   #
   # Before we push our local changes, we may want to do some cleanup,
@@ -325,6 +334,15 @@
 
   # submodule - enables foreign repositories to be embedded within a dedicated subdirectory of the source tree.
   sm = submodule
+
+  # submodule init
+  smi = submodule init
+
+  # submodule add
+  sma = submodule add
+
+  # submodule sync
+  sms = submodule sync
 
   # submodule update
   smu = submodule update
@@ -628,6 +646,10 @@
   # Do a push/pull for just one branch
   push1 = "!git push origin $(git branch-name)"
   pull1 = "!git pull origin $(git branch-name)"
+
+  # Track and untrack, with default parameters, and with printing the command
+  track = "!f(){ branch=$(git rev-parse --abbrev-ref HEAD); cmd=\"git branch $branch -u ${1:-origin}/${2:-$branch}\"; echo $cmd; $cmd; }; f"
+  untrack = "!f(){ branch=$(git rev-parse --abbrev-ref HEAD); cmd=\"git branch --unset-upstream ${1:-$branch}\"; echo $cmd; $cmd; }; f"
 
   # Track all remote branches that aren't already being tracked;
   # this is a bit hacky because of the parsing, and we welcome
