@@ -34,7 +34,7 @@ endif
 
 " Theme
 syntax enable
-let g:material_style='palenight'
+"let g:material_style='palenight'
 set background=dark
 colorscheme vim-material
 "colorscheme palenight
