@@ -22,7 +22,7 @@ Plug 'rlue/vim-barbaric'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'junegunn/vim-xmark', { 'do': 'make' }
+Plug 'mileszs/ack.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -52,9 +52,6 @@ let g:list_of_visual_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
 
-" ctrlpvim/ctrlp.vim
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
 " https://github.com/scrooloose/nerdtree
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
@@ -66,3 +63,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 set ignorecase
 set smartcase
+
+" fzf
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+
+" https://github.com/mileszs/ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  nnoremap <silent> <Leader>A :Ag<CR>
+endif
