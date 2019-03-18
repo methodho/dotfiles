@@ -17,6 +17,8 @@ alias l='ls -lahG'
 alias ll='ls -lhG'
 alias la='ls -lAhG'
 
+alias ql='qlmanage -p'
+
 # https://github.com/sindresorhus/pure
 #export prompt_newline='%666v'
 export PROMPT="%F{yello}%* $PROMPT"
