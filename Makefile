@@ -5,7 +5,7 @@ HAS_ZSH := $(shell command -v zsh;)
 HAS_ANTIBODY := $(shell command -v antibody;)
 HAS_NEOVIM := $(shell command -v nvim;)
 HAS_XKBSWITCH := $(shell command -v xkbswitch;)
-HAS_AG := $(shell command -v ag;)
+HAS_RG := $(shell command -v rg;)
 
 .PHONY: all
 all: bootstrap zsh vim git
@@ -27,8 +27,8 @@ endif
 ifndef HAS_ANTIBODY
 	brew install getantibody/tap/antibody
 endif
-ifndef HAS_AG
-	brew install the_silver_searcher
+ifndef HAS_RG
+	brew install ripgrep
 endif
 	rm -rf ~/.kubectl_aliases
 	git clone https://github.com/ahmetb/kubectl-aliases.git ~/.kubectl_aliases

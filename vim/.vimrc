@@ -22,8 +22,6 @@ Plug 'rlue/vim-barbaric'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'mileszs/ack.vim'
-
 " Initialize plugin system
 call plug#end()
 
@@ -68,8 +66,4 @@ set smartcase
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 
-" https://github.com/mileszs/ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-  nnoremap <silent> <Leader>A :Ag<CR>
-endif
+nnoremap <Leader>r :Rg<Space>
