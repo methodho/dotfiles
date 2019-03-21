@@ -70,7 +70,3 @@ source $DOTFILES/zsh/fz.sh
 export PATH=$PATH:/Users/matt/development/flutter/bin
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# https://github.com/ahmetb/kubectl-aliases
-[ -f ~/.kubectl_aliases/.kubectl_aliases ] && source ~/.kubectl_aliases/.kubectl_aliases
-function kubectl() { echo "+ kubectl $@"; command kubectl $@; }
