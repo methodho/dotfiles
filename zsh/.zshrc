@@ -70,3 +70,4 @@ source $DOTFILES/zsh/fz.sh
 export PATH=$PATH:/Users/matt/development/flutter/bin
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+source <(slctl completion zsh)
