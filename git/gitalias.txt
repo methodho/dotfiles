@@ -12,7 +12,7 @@
 #
 #   * Include the path to this file.
 #
-# Example file `~/.gitconfg` with an entry to include the file `~/.gitalias.txt`:
+# Example file `~/.gitconfig` with an entry to include the file `~/.gitalias.txt`:
 #
 #     [include]
 #       path = gitalias.txt
@@ -31,7 +31,7 @@
 # then one way is to use your git config file to include this gitalias file,
 # and also define your own alias items; a later alias takes precedence.
 #
-# Example file `~/.gitconfg` item to include the file `~/.gitalias.txt`:
+# Example file `~/.gitconfig` item to include the file `~/.gitalias.txt`:
 #
 #     [include]
 #       path = ~/.gitconfig.d/gitalias.txt
@@ -145,10 +145,10 @@
 
   # cherry-pick - continue the picking process
   cpc = cherry-pick --continue
-    
+
   # cherry-pick without making a commit, and when when recording the commit, append a line that says "(cherry picked from commit ...)"
   cp-nx = cherry-pick --no-commit -x
-    
+
   ### diff ###
 
   # diff - show changes not yet staged
@@ -189,7 +189,7 @@
 
   # log with patch generation.
   lp = log --patch
-  
+
   # log with first parent, useful for team branch that only accepts pull requests
   lfp = log --first-parent
 
@@ -197,7 +197,10 @@
   lt = log --topo-order
 
   # log like - we like this summarization our key performance indicators. Also aliased as `log-like`.
-  ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+  ll = log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+
+  # log like long  - we like this summarization our key performance indicators. Also aliased as `log-like-long`.
+  lll = log --graph --topo-order --date=iso8601-strict --no-abbrev-commit --abbrev=40 --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn <%ce>]%Creset %Cblue%G?%Creset'
 
   ## ls-files ##
 
@@ -244,6 +247,24 @@
   #
   pr = pull --rebase
 
+  # pp - pull with rebase preserve of merge commits
+  #
+  # See https://stackoverflow.com/questions/21364636/git-pull-rebase-preserve-merges
+  #
+  # You should only rebase if you know (in a sort of general sense)
+  # what you are doing, and if you do know what you are doing, then you
+  # would probably prefer a merge-preserving rebase as a general rule.
+  #
+  # Although by the time you've decided that rebasing is a good idea,
+  # you will probably find that a history that has its own embedded
+  # branch-and-merge-points is not necessarily the correct "final
+  # rewritten history".
+  #
+  # That is, if it's appropriate to do a rebase at all, it's at least fairly
+  # likely that the history to be rebased is itself linear, so that the
+  # preserve-vs-flatten question is moot anyway.
+  pp = pull --rebase=preserve
+
   ### rebase ###
 
   # rebase - forward-port local commits to the updated upstream head.
@@ -251,13 +272,13 @@
 
   # rebase abort - cancel the rebasing process
   rba = rebase --abort
-  
+
   # rebase - continue the rebasing process after resolving a conflict manually and updating the index with the resolution.
   rbc = rebase --continue
 
   # rebase - restart the rebasing process by skipping the current patch.
   rbs = rebase --skip
-    
+
   # rbi - rebase interactive on our unpushed commits.
   #
   # Before we push our local changes, we may want to do some cleanup,
@@ -279,7 +300,7 @@
   #     pick 7f06d36 foo
   #     s ad544d0 goo
   #     r de3083a whatever
-  #	
+  #
   # This gives me two new commit messages to edit, which I update.
   # Now when I push the remote repo host receives two commits
   #
@@ -456,7 +477,10 @@
   log-fresh = log ORIG_HEAD.. --stat --no-merges
 
   # Show log in our preferred format for our key performance indicators. A.k.a. `ll`.
-  log-like = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+  log-like = log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+
+  # Show log in our preferred format for our key performance indicators, with long items. A.k.a. `lll`.
+  log-like-long = log --graph --topo-order --date=iso8601-strict --no-abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn <%ce>]%Creset %Cblue%G?%Creset'
 
   # Show log with dates in our local timezone
   log-local = log --date=local
@@ -589,6 +613,50 @@
   # Is the commit a merge commit? If yes exit 0, else exit 1
   commit-is-merge = ![ "$(git cat-file -p "42e810fddc4688b28ef1cf438998579344cc33f5" | sed -n '/0/,/^ *$/p' | grep -c "^parent ")" -ge "2" ]
 
+  # Show the commit's keyword-marked lines.
+  #
+  # Show each line in the commit message that starts with zero or more blanks, 
+  # then a keyword (alphanum and dash characters), then a colon.
+  #
+  # Example commit:
+  #
+  #     commit ce505d161fccdbc8d4bf12047846de7433ad6d04
+  #     Author: Joel Parker Henderson <joel@joelparkerhenderson.com>
+  #     Date:   Tue May 28 11:53:47 2019 -0700
+  #
+  #         Add feature foo
+  #
+  #         This commit is to add feature foo.
+  #
+  #         Time: 5 hours
+  #         Cost: 600 USD
+  #
+  # Command:
+  #
+  #     $ git commit-message-key-lines ce505d161fccdbc8d4bf12047846de7433ad6d04
+  #     Commit: ce505d161fccdbc8d4bf12047846de7433ad6d04
+  #     Author: Joel Parker Henderson <joel@joelparkerhenderson.com>
+  #     Date: Tue May 28 11:53:47 2019 -0700
+  #     Time: 5 hours
+  #     Cost: 600 USD
+  #
+  # Normalize the output:
+  #
+  #   * Start the output with "Commit: <commit>"
+  #
+  #   * Omit leading blanks
+  #
+  #   * After the colon, use one space (not tab, not multiple spaces, etc.)
+  #    
+  # Known issues:
+  #
+  #   * TODO: improve the keyword matcher so it requires the keyword to end
+  #     in an alphanum (not a dash), and also so the dash is a separator i.e.
+  #     the matcher does not accept a dash followed by another dash.
+  #
+  commit-message-key-lines = "!f(){ echo \"Commit: $1\"; git log \"$1\" --format=fuller | grep \"^[[:blank:]]*[[:alnum:]][-[:alnum:]]*:\" | sed \"s/^[[:blank:]]*//; s/:[[:blank:]]*/: /\"; }; f"
+
+
   ### WORKFLOW ALIASES ###
 
   # Clone a git repository including all submodules
@@ -655,7 +723,7 @@
   # this is a bit hacky because of the parsing, and we welcome
   # better code that works using more-specific git commands.
   track-all-remote-branches = !"f() { git branch -r | grep -v ' -> ' | sed 's/^ \\+origin\\///' ; }; f"
-  
+
   ##
   # Reset & Undo
   ##
@@ -1166,7 +1234,7 @@
   };f"
 
   ### MANAGE TOPIC BRANCHES ###
-  
+
   ##
   # Update the current topic branch by synchronizing changes.
   #
@@ -1201,7 +1269,7 @@
   #
   # Customize this alias as you like for your own workflow.
   ##
-  
+
   topic-move = "!f(){ \
     new_branch=\"$1\"; \
     old_branch=$(git branch-name); \
