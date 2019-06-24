@@ -1,5 +1,10 @@
 export DOTFILES=~/.dotfiles
 
+# lang
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # https://github.com/lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true
 
