@@ -45,13 +45,6 @@ fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 eval "$(hub alias -s)"
 
-# https://github.com/neovim/neovim
-# use .vimrc for neovim: https://blog.m157q.tw/posts/2018/07/23/use-my-old-vimrc-for-neovim/
-alias vi="nvim"
-alias vim="nvim"
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export VIMRUNTIME="$(nvim -e --cmd 'echo $VIMRUNTIME|quit' 2>&1)"
-
 # https://github.com/github-changelog-generator/github-changelog-generator
 export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 
