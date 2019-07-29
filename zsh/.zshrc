@@ -61,7 +61,6 @@ export NNN_BMS='D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.
 export DISABLE_FILE_OPEN_ON_NAV=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $DOTFILES/zsh/zsh-interactive-cd.plugin.zsh
 source $DOTFILES/zsh/fz.sh
 
 # https://flutter.io/
