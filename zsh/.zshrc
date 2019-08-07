@@ -23,6 +23,7 @@ alias ll='ls -lhG'
 alias la='ls -lAhG'
 
 alias ql='qlmanage -p'
+alias lg='lazygit'
 
 # https://github.com/sindresorhus/pure
 #export prompt_newline='%666v'
@@ -68,3 +69,7 @@ export PATH=$PATH:/Users/matt/development/flutter/bin
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source <(slctl completion zsh)
+
+# https://github.com/junegunn/fzf#settings
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER=','
