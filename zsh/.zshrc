@@ -73,3 +73,6 @@ source <(slctl completion zsh)
 # https://github.com/junegunn/fzf#settings
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER=','
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
