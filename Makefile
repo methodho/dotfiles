@@ -29,6 +29,7 @@ endif
 ifndef HAS_RG
 	brew install ripgrep
 endif
+	curl -sSL https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -o zsh/.kubectl_aliases
 	ln -f zsh/.zshrc ~/.zshrc
 	antibody bundle < zsh/bundles.txt > ~/.zsh_plugins.sh
 	antibody update

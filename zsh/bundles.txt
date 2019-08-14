@@ -1,4 +1,5 @@
 mafredri/zsh-async
+changyuheng/fz
 rupa/z
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
@@ -12,7 +13,6 @@ davidparsson/zsh-pyenv-lazy
 shihyuho/zsh-jenv-lazy
 
 # these should be at last!
-#sindresorhus/pure
 romkatv/powerlevel10k
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search

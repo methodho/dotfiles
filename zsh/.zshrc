@@ -39,7 +39,7 @@ eval $(thefuck --alias)
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export GITHUB_TOKEN=071d81562713783bc77cc6689715cde8475ec223
+export GITHUB_TOKEN=b54fe9fa1ac0ee295829bf91c1795bd7c42dc587
 
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
@@ -54,6 +54,7 @@ export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
 
 # https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+[ -f $DOTFILES/zsh/.kubectl_aliases ] && source $DOTFILES/zsh/.kubectl_aliases
 
 # https://github.com/jarun/nnn
 source $DOTFILES/nnn/quitcd.zsh
@@ -62,7 +63,6 @@ export NNN_BMS='D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.
 export DISABLE_FILE_OPEN_ON_NAV=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $DOTFILES/zsh/fz.sh
 
 # https://flutter.io/
 export PATH=$PATH:/Users/matt/development/flutter/bin
