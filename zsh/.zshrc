@@ -39,8 +39,6 @@ eval $(thefuck --alias)
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export GITHUB_TOKEN=b54fe9fa1ac0ee295829bf91c1795bd7c42dc587
-
 # https://github.com/github/hub
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
