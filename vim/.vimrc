@@ -63,6 +63,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 set ignorecase
 set smartcase
+set hlsearch
+set incsearch
+set cindent
 
 " fzf
 nnoremap <silent> <Leader>f :Files<CR>
