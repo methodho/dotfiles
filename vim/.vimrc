@@ -1,26 +1,35 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Common vim settings
 Plug 'tpope/vim-sensible'
 
+" File system navigation
 Plug 'scrooloose/nerdtree'
 
+" FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Theme
 Plug 'itchyny/lightline.vim'
-
-"Plug 'cocopon/iceberg.vim'
 Plug 'hzchirs/vim-material'
 Plug 'drewtempelmeyer/palenight.vim'
 
+" Disabled UP,DONW,LEFT,RIGHT
 Plug 'takac/vim-hardtime'
 
+" Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
+" Automatic input method switching
 Plug 'rlue/vim-barbaric'
 
-Plug 'easymotion/vim-easymotion'
+" Auto remove tailing whitespace
+Plug 'ntpeters/vim-better-whitespace'
 
 " Initialize plugin system
 call plug#end()
@@ -30,12 +39,55 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-" Theme
+" Load sensible.vim before your vimrc, so we can overrides the settings
+runtime! plugin/sensible.vim
+
+filetype indent off
+
+" =============== Common settings ===============
+
+" ---------- General settings ----------
+
+" Share clipboard with Mac
+set clipboard=unnamed
+
+" search as characters are entered
+set incsearch
+" highlight search matches
+set hlsearch
+
+" search insensitivity
+set ignorecase
+set smartcase
+
+" ---------- Code organize ----------
+
+" Use spaces as indent
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
+" Disable folding function
+set nofoldenable
+
+" ---------- Display ----------
+
+" Syntax highlight
 syntax enable
-"let g:material_style='palenight'
+
+" Set color format
+set t_Co=256
+
+" ---------- File encoding ----------
+
+" Encoding for chinese
+set encoding=utf8
+
+" =============== Plugin settings ===============
+
+" Theme
 set background=dark
 colorscheme vim-material
-"colorscheme palenight
 
 " Airline
 let g:lightline = {
@@ -60,12 +112,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Stick this in your vimrc to open NERDTree with Ctrl+n (you can set whatever key you want):
 map <C-n> :NERDTreeToggle<CR>
-
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set cindent
 
 " fzf
 nnoremap <silent> <Leader>f :Files<CR>
