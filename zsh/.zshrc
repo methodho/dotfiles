@@ -12,10 +12,10 @@ export NVM_LAZY_LOAD=true
 source ~/.zsh_plugins.sh
 
 # general
-alias lsa='exa --git -la'
-alias l='exa --git -la'
+alias lsa='exa --git -laa'
+alias l='exa --git -laa'
 alias ll='exa --git -l'
-alias la='exa --git -la'
+alias la='exa --git -laa'
 alias ql='qlmanage -p'
 alias lg='lazygit'
 
