@@ -5,6 +5,7 @@ HAS_ZSH := $(shell command -v zsh;)
 HAS_ANTIBODY := $(shell command -v antibody;)
 HAS_XKBSWITCH := $(shell command -v xkbswitch;)
 HAS_RG := $(shell command -v rg;)
+HAS_EXA := $(shell command -v exa;)
 
 .PHONY: all
 all: bootstrap zsh vim git
@@ -28,6 +29,9 @@ ifndef HAS_ANTIBODY
 endif
 ifndef HAS_RG
 	brew install ripgrep
+endif
+ifndef HAS_EXA
+	brew install exa
 endif
 	curl -sSL https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -o zsh/.kubectl_aliases
 	ln -f zsh/.zshrc ~/.zshrc

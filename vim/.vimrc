@@ -4,6 +4,9 @@ filetype off                  " required
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
+" EasyMotion
+Plug 'easymotion/vim-easymotion'
+
 " Common vim settings
 Plug 'tpope/vim-sensible'
 
@@ -118,3 +121,5 @@ nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 
 nnoremap <Leader>r :Rg<Space>
+
+let g:EasyMotion_smartcase = 1

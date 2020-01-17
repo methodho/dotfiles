@@ -51,9 +51,9 @@
 # ## Tracking
 #
 #   * Package: gitalias
-#   * Version: 21.5.0
+#   * Version: 22.2.0
 #   * Created: 2016-06-17
-#   * Updated: 2019-09-04
+#   * Updated: 2020-01-13
 #   * License: GPL
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
@@ -272,25 +272,25 @@
   #
   # See https://stackoverflow.com/questions/38269092/is-it-possible-to-put-preserve-merges-in-the-gitconfig
   #
-  # While preserving merges is probably generally superior, in at least a 
-  # few ways, to discarding them when rebasing, the fact is that rebase 
-  # cannot preserve them. The only thing it can do, once some commits 
+  # While preserving merges is probably generally superior, in at least a
+  # few ways, to discarding them when rebasing, the fact is that rebase
+  # cannot preserve them. The only thing it can do, once some commits
   # have been copied to new commits, is re-perform them. This can have new
-  # and/or different merge conflicts, vs the last time the merge was done. 
-  # You should also pay close attention to the restrictions on merge 
+  # and/or different merge conflicts, vs the last time the merge was done.
+  # You should also pay close attention to the restrictions on merge
   # preservation in the git rebase documentation.
   #
   # Without getting into a lot of detail, it always seems to me that most
-  # commit graph subsets that "should be" rebased, rarely have any 
+  # commit graph subsets that "should be" rebased, rarely have any
   # internal merges. If such a graph subset has a single final merge, you
-  # can simply strip away that merge (with git reset) before rebasing, 
-  # and re-do that single merge manually at the end. (In fact, git rebase 
+  # can simply strip away that merge (with git reset) before rebasing,
+  # and re-do that single merge manually at the end. (In fact, git rebase
   # normally drops merge commits entirely, so you don't have to run the git
   # reset itself in some cases. The one where you do have to run it is when
-  # the merge is into the branch onto which you intend to rebase. This is 
-  # where git pull actually does the right thing when it uses 
-  # `git rebase -p`, except that it fails to check for, and warn about, 
-  # internal merges, which are sort of warning signs that rebasing might 
+  # the merge is into the branch onto which you intend to rebase. This is
+  # where git pull actually does the right thing when it uses
+  # `git rebase -p`, except that it fails to check for, and warn about,
+  # internal merges, which are sort of warning signs that rebasing might
   # not be a good idea.
   #
   pp = pull --rebase=preserve
@@ -500,8 +500,11 @@
 
   # List all blobs by size in bytes.
   # By [CodeGnome](http://www.codegnome.com/)
-  rev-list-all-objects-sort-by-size = !"git rev-list --all --objects  | awk '{print $1}'| git cat-file --batch-check | fgrep blob | sort -k3nr"
+  rev-list-all-objects-by-size = !"git rev-list --all --objects  | awk '{print $1}'| git cat-file --batch-check | fgrep blob | sort -k3nr"
 
+  # List all objects by size in bytes and file name.
+  # By [raphinesse](https://stackoverflow.com/users/380229/raphinesse)
+  rev-list-all-objects-by-size-and-name = !"git rev-list --all --objects | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | awk '/^blob/ {print substr($0,6)}' | sort --numeric-sort --key=2"
 
   ### LOG ALIASES ###
 
@@ -533,18 +536,18 @@
   log-latest-date = log -1 --date-order --format=%cI
 
   # Show the log of the recent hour, day, week, month, year
-  log-hour  = log --since "1 hour ago"
-  log-day   = log --since "1 day ago"
-  log-week  = log --since "1 week ago"
-  log-month = log --since "1 month ago"
-  log-year  = log --since "1 year ago"
+  log-hour  = log --since=1-hour-ago
+  log-day   = log --since=1-day-ago
+  log-week  = log --since=1-week-ago
+  log-month = log --since=1-month-ago
+  log-year  = log --since=1-year-ago
 
   # Show the log of my own recent hour, day, week, month, year
-  log-my-hour  = log --author $(git config user.email) --since "1 hour ago"
-  log-my-day   = log --author $(git config user.email) --since "1 day ago"
-  log-my-week  = log --author $(git config user.email) --since "1 week ago"
-  log-my-month = log --author $(git config user.email) --since "1 month ago"
-  log-my-year  = log --author $(git config user.email) --since "1 year ago"
+  log-my-hour  = log --author $(git config user.email) --since=1-hour-ago
+  log-my-day   = log --author $(git config user.email) --since=1-day-ago
+  log-my-week  = log --author $(git config user.email) --since=1-week-ago
+  log-my-month = log --author $(git config user.email) --since=1-month-ago
+  log-my-year  = log --author $(git config user.email) --since=1-year-ago
 
   # Show a specific format string and its number of log entries
   log-of-format-and-count = "!f() { format=\"$1\"; shift; git log $@ --format=oneline --format="$format" | awk '{a[$0]++}END{for(i in a){print i, a[i], int((a[i]/NR)*100) \"%\"}}' | sort; }; f"
@@ -624,8 +627,24 @@
   #   * The timeline stops with the date of the latest commit.
   #   * The intent is to show the most relevant information.
   #
+  # The chart default is to look at the past 6 weeks;
+  # this gives a good balance of recency and speed
+  # for a team that's currently working on a repo,
+  # and also gives a good balance of fitting within
+  # one terminal window 80 character width.
+  #
+  # You can adjust how far back the chart looks,
+  # by providing your own `--since` parameter.
+  # For example if you want to chart an older repo,
+  # that does not have any recent commits, then you
+  # you must provide a longer `--since` parameter.
+  #
   chart = "!f() { \
-    git log --format=oneline --format=\"%aE %at\" --since=\"48 days ago\" $@ | \
+    git log \
+    --format=oneline \
+    --format=\"%aE %at\" \
+    --since=6-weeks-ago \
+    $* | \
     awk ' \
     function time_to_slot(t) { return strftime(\"%Y-%m-%d\", t, true) } \
     function count_to_char(i) { return (i > 0) ? ((i < 10) ? i : \"X\") : \".\" } \
@@ -675,7 +694,7 @@
   #
   # Show churn for a time range:
   #
-  #   $ git churn --since='1 month ago'
+  #   $ git churn --since=1-month-ago
   #
   # These are all standard arguments to `git log`.
   #
@@ -685,7 +704,7 @@
   #
   # For example, to see where work on an app was focused on in the past month:
   #
-  #     $ git churn --since='1 month ago' app/ | tail
+  #     $ git churn --since=1-month-ago app/ | tail
   #
   # This can also highlight potential problems with technical debt in a project.
   # A specific file changing too often is generally a red flag, since it probably
@@ -697,7 +716,7 @@
   #
   # For instance, to see who contributed most to the API part of an application:
   #
-  #    $ git log --format='%an' --since='1 month ago' app/controllers/api/ | \
+  #    $ git log --format='%an' --since=1-month-ago app/controllers/api/ | \
   #      sort | uniq -c | sort -rn | head
   #
   #    109 Alice Anderson
@@ -847,9 +866,13 @@
   #  * git get: fetch and prune, pull and rebase, then update submodules
   #  * git put: commit all items, then push
   #
+  # If you want to preserve merges, then we recommend you set this:
+  #
+  #     git config pull.rebase preserve
+  #
   # TODO: handle tags, delete superfluous branches, and add error handing.
   #
-  get = !git fetch --prune && git pull --rebase=preserve && git submodule update --init --recursive
+  get = !git fetch --prune && git pull --rebase && git submodule update --init --recursive
   put = !git commit --all && git push
 
   # Do everything we can to make the local repo like the master branch.
