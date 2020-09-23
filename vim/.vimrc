@@ -29,7 +29,7 @@ Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
 
 " Automatic input method switching
-Plug 'rlue/vim-barbaric'
+" Plug 'rlue/vim-barbaric'
 
 " Auto remove tailing whitespace
 Plug 'ntpeters/vim-better-whitespace'

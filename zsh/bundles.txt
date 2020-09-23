@@ -1,8 +1,8 @@
 mafredri/zsh-async
 changyuheng/fz
 rupa/z
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
+#zsh-users/zsh-completions
+#zsh-users/zsh-autosuggestions
 chrissicool/zsh-256color
 yous/vanilli.sh
 paulirish/git-open
@@ -14,5 +14,5 @@ shihyuho/zsh-jenv-lazy
 
 # these should be at last!
 romkatv/powerlevel10k
-zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
