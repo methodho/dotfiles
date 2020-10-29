@@ -70,3 +70,7 @@ export FZF_COMPLETION_TRIGGER=','
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 eval "$(gh completion -s zsh)"
+
+source <(oc completion zsh)
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
