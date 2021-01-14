@@ -34,6 +34,9 @@ Plug 'tpope/vim-surround'
 " Auto remove tailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
+" nnn
+Plug 'mcchrish/nnn.vim'
+
 " Initialize plugin system
 call plug#end()
 

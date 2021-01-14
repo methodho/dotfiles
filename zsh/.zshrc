@@ -38,9 +38,6 @@ fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 eval "$(hub alias -s)"
 
-# https://github.com/github-changelog-generator/github-changelog-generator
-export CHANGELOG_GITHUB_TOKEN=a940aacc119d0072163ec23387dd6920e74639bd
-
 # added by travis gem
 [ -f /Users/matt/.travis/travis.sh ] && source /Users/matt/.travis/travis.sh
 
@@ -49,10 +46,11 @@ if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 [ -f $DOTFILES/zsh/.kubectl_aliases ] && source $DOTFILES/zsh/.kubectl_aliases
 
 # https://github.com/jarun/nnn
-source $DOTFILES/nnn/quitcd.zsh
+source $DOTFILES/nnn/quitcd.bash_zsh
 export NNN_COPIER="$DOTFILES/nnn/copier.sh"
-export NNN_BMS='D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub;o:~/go/src/github.com'
+export NNN_BMS='D:~/Downloads/;t:~/tmp;d:~/Desktop;g:~/GitHub'
 export DISABLE_FILE_OPEN_ON_NAV=1
+alias ls='n -de'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -72,5 +70,8 @@ export FZF_COMPLETION_TRIGGER=','
 eval "$(gh completion -s zsh)"
 
 source <(oc completion zsh)
+source <(tkn completion zsh)
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export HOMEBREW_GITHUB_API_TOKEN=1aa451b5b0ccacc367f8049cab07b4fd5a8fe70f
